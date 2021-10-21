@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>blog home</h1>
+    <h2><a href="/blog/create/">생성하기</a></h2>
+    {% if post_list %}
+    <ol>
+        {% for post in post_list %}
+        <li><a href = "/blog/post/{{ post.id }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <h4>No Posts</h4>
+    {% endif %}
 </body>
 </html>
