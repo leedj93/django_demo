@@ -9,9 +9,15 @@
 <body>
     <h1>blog edit</h1>
     <h2>edit Post Page</h2>
-    <form action="/blog/post-edit/{{ post.id }}/" method="post" id="blog-edit">
+    <form action="/blog/post-edit/{{ post.id }}/" method="post" id="blog-edit" enctype="multipart/form-data">
         {% csrf_token %}
         Title:<input type = "text" name="title" value="{{ post.title }}"/>
+        {% if post.header_image %}
+        <div style="width: 600px;">
+            <image src="{{ post.header_image.url }}" style="width: 100%"/>
+        </div>
+        {% endif %}
+        <div>Head Image:<input type="file" id="image" name="image" /></div>
         <input type="submit"/>
 
     </form>

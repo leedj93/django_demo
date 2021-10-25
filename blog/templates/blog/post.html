@@ -7,7 +7,14 @@
     <title>blog post</title>
 </head>
 <body>
+
+
     <h1>{{ post.title }}</h1>
+    {% if post.header_image %}
+    <div style="width: 600px;">
+        <image src="{{ post.header_image.url }}" style="width: 100%"/>
+    </div>
+    {% endif %}
     <p>{{ post.content }}</p>
     <a href="/blog/post-edit/{{ post.id }}">edit</a>
     <a href="/blog/post-delete/{{ post.id }}">delete</a>

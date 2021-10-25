@@ -9,9 +9,10 @@
 <body>
     <h1>blog create</h1>
     <h2>Write Post Page</h2>
-    <form action="/blog/create/" method="post" id="blog-create">
+    <form action="/blog/create/" method="post" id="blog-create" enctype="multipart/form-data">
         {% csrf_token %}
         Title: <input type = "text" name="title"/>
+        <div>Head Image:<input type="file" id="image" name="image" /></div>
         <input type="submit"/>
 
     </form>
